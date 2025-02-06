@@ -1,1 +1,262 @@
-hello deepseekers!
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek服务清单 - deepseeklist.com</title>
+    <style>
+        :root {
+            --primary-color: #e6f4ff;  /* 改为浅科技蓝 */
+            --secondary-color: #6b9080;
+            --background: #f8fafc;     /* 调亮背景色 */
+            --header-blue: #f8f9fa;    /* 改为浅灰 */
+            --footer-blue: #f1f3f5;    /* 改为稍深灰 */
+            --text-primary: #2d3142;      /* 主要文字颜色 */
+            --text-secondary: #4f5d75;    /* 次要文字颜色 */
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--background);
+            margin: 0;
+            padding: 0;  /* 移除body的padding */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;  /* 将padding移到container中 */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--header-blue), #e9ecef); /* 灰阶渐变 */
+            color: white;  /* 改为白色文字 */
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000;  /* 新增黑色标题 */
+        }
+
+        .header p {
+            margin: 1rem 0 0;
+            font-size: 1.1rem;
+            opacity: 0.8;
+            color: #000;  /* 新增黑色副标题 */
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);  /* 半透明白色 */
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            padding-bottom: 4rem;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            color: #3b82f6;  /* 改为更现代、柔和的蓝色 */
+            margin-top: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;   /* 原0.25rem 0.75rem 缩小20% */
+            border-radius: 8px;       /* 新增圆角 */
+            font-size: 0.8rem;         /* 原0.85rem */
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            background: #e0e2db;  /* 浅灰背景 */
+            color: var(--text-secondary);
+        }
+
+        .full-version {
+            background: #c7d3d8;  /* 灰蓝色 */
+            color: #2d3142;
+        }
+
+        .api-supported {
+            background: #dbeafe;  /* 浅科技蓝 */
+            color: #1d4ed8;
+        }
+
+        .card a {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;  /* 原0.75rem 1.5rem 缩小25% */
+            border-radius: 20px;      /* 原6px 改为大圆角 */
+            font-size: 0.85rem;       /* 原0.9rem */
+            background: #f0f0f0;      /* 淡灰色背景 */
+            color: #666;              /* 中灰色文字 */
+            text-decoration: none;
+            transition: all 0.2s;
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+        }
+
+        .card a:hover {
+            background: #e0e0e0;      /* 稍深灰色 */
+            transform: scale(1.02);    /* 保留轻微动画 */
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem 0;
+            background: var(--footer-blue);
+            color: #2d3142;  /* 改为深色文字 */
+            font-size: 0.9em;
+            border-top: none;
+            width: 100%;
+            position: relative;
+            left: -2rem;  /* 抵消body的padding */
+            width: calc(100% + 4rem);  /* 补偿左右padding */
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer a {
+            color: inherit;  /* 继承父级颜色 */
+            text-decoration: none;
+        }
+
+        .footer a:hover,
+        .footer a:active,
+        .footer a:visited {
+            color: inherit;  /* 保持颜色不变 */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>DeepSeek服务清单</h1>
+            <p>deepseeklist.com - 开源DeepSeek部署信息一览</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card-grid">
+            <!-- 国家超算互联网平台 -->
+            <div class="card">
+                <h3>国家超算互联网平台</h3>
+                <div class="badge full-version">满血版671B</div>
+                <div class="badge api-supported">API支持</div>
+                <p>支持全系列模型，包含最大671B参数的满血版本，无需注册即可使用</p>
+                <a href="https://www.nscc-cloud.cn" target="_blank">访问服务</a>
+            </div>
+
+            <!-- 腾讯云TI平台 -->
+            <div class="card">
+                <h3>腾讯云TI平台</h3>
+                <div class="badge full-version">满血版671B</div>
+                <div class="badge api-supported">API支持</div>
+                <p>提供V3/R1原版模型，支持企业级API调用和定制化部署</p>
+                <a href="https://cloud.tencent.com/product/ti" target="_blank">访问控制台</a>
+            </div>
+
+            <!-- 华为云API服务 -->
+            <div class="card">
+                <h3>华为云API市场</h3>
+                <div class="badge">67B版本</div>
+                <div class="badge api-supported">API支持</div>
+                <p>提供免费API试用，支持R1系列模型，适合中小规模需求</p>
+                <a href="https://marketplace.huaweicloud.com" target="_blank">立即试用</a>
+            </div>
+
+            <!-- 华为小艺助手 -->
+            <div class="card">
+                <h3>华为小艺助手</h3>
+                <div class="badge">Beta版本</div>
+                <div class="badge api-supported">API支持</div>
+                <p>接入DeepSeek-R1 Beta版本，需升级至特定版本使用</p>
+                <a href="https://www.huawei.com/cn/assistant" target="_blank">了解更多</a>
+            </div>
+
+            <!-- API易平台 -->
+            <div class="card">
+                <h3>API易平台</h3>
+                <div class="badge">V3/R1系列</div>
+                <div class="badge api-supported">API支持</div>
+                <p>支持OpenAI兼容API调用，注册即送试用额度</p>
+                <a href="https://www.apieasy.com" target="_blank">开始使用</a>
+            </div>
+
+            <!-- 硅基流动 x 华为云 -->
+            <div class="card">
+                <h3>硅基流动 x 华为云</h3>
+                <div class="badge api-supported">API支持</div>
+                <p>提供免费API服务，注册赠送14元试用额度</p>
+                <a href="https://www.guiji.ai" target="_blank">免费试用</a>
+            </div>
+
+            <!-- 微软Azure -->
+            <div class="card">
+                <h3>微软Azure</h3>
+                <div class="badge api-supported">API支持</div>
+                <p>提供免费API调用服务，支持企业级应用部署</p>
+                <a href="https://azure.microsoft.com" target="_blank">访问Azure</a>
+            </div>
+
+            <!-- 英伟达NVIDIA -->
+            <div class="card">
+                <h3>英伟达NVIDIA</h3>
+                <div class="badge api-supported">API支持</div>
+                <p>免费提供1000次API调用，适合轻量级需求</p>
+                <a href="https://www.nvidia.com/ai" target="_blank">获取API</a>
+            </div>
+
+            <!-- 本地部署（Ollama） -->
+            <div class="card">
+                <h3>本地部署（Ollama）</h3>
+                <div class="badge">最高67B</div>
+                <p>支持本地离线运行，适合个人开发者使用，需要较高配置</p>
+                <a href="https://ollama.ai" target="_blank">下载Ollama</a>
+            </div>
+        </div>
+
+        <!-- 删除这个重复的 footer -->
+        <!-- <div class="footer">
+            <p>© 2024 DeepSeek服务清单 | <a href="https://github.com/deepseek-ai" target="_blank">DeepSeek GitHub</a></p>
+            <p>本站提供的信息仅供参考，具体服务详情请以各平台官方说明为准</p>
+        </div> -->
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 DeepSeek服务清单 | <a href="https://github.com/deepseek-ai" target="_blank">DeepSeek GitHub</a></p>
+            <p>本站提供的信息仅供参考，具体服务详情请以各平台官方说明为准</p>
+        </div>
+    </footer>
+</body>
+</html>
