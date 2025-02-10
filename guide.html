@@ -88,8 +88,8 @@
         }
         .news-item {
             display: flex;
-            gap: 20px;
-            padding: 12px;
+            gap: 15px;
+            padding: 15px;
             background-color: #fff;
             border: 1px solid #eee;
             border-radius: 8px;
@@ -104,6 +104,19 @@
             transform: translateY(-3px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
+        .news-thumbnail {
+            width: 120px;
+            height: 80px;
+            flex-shrink: 0;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+        .news-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         .news-content {
             flex: 1;
             display: flex;
@@ -115,20 +128,17 @@
             margin: 0 0 10px 0;
             color: #2a4365 !important;
             font-size: 18px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .news-content h3 img {
-            height: 1.1em; /* 相对单位 */
-            vertical-align: -0.1em; /* 微调对齐 */
-            margin-right: 0.3em;
+            display: block;
         }
         .news-date {
             color: #666;
             font-size: 0.9em;
             margin-bottom: 10px;
-            text-align: right;
+            text-align: left;
+        }
+        .news-date strong {
+            font-weight: bold;
+            margin-right: 8px;
         }
         .news-content p {
             margin: 0 0 15px 0;
@@ -200,6 +210,10 @@
             }
             .news-list {
                 grid-template-columns: 1fr !important;
+            }
+            .news-thumbnail {
+                width: 100%;
+                height: 180px;
             }
         }
 
@@ -286,6 +300,12 @@
             color: #666;
             margin: 0;
         }
+        /* 新增提取码样式 */
+        p strong {
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -298,8 +318,8 @@
             <p class="site-notice"> 个人 Deepseek 学习分享，仅供参考，与Deepseek官方无关联</p>
             <nav>
                 <div class="nav-left">
-                    <a href="#" style="border-bottom: 3px solid #6236E5; padding-bottom: 3px; border-radius: 0;">首页</a>
-                    <a href="guide.html">Deepseek使用攻略和PDF下载</a>
+                    <a href="index.html">首页</a>
+                    <a href="guide.html" style="border-bottom: 3px solid #6236E5; padding-bottom: 3px; border-radius: 0;">Deepseek使用攻略和PDF下载</a>
                 </div>
                 <a href="#" id="groupLink">加入Deepseek学习群</a>
             </nav>
@@ -312,7 +332,7 @@
     <main>
         <section class="news-section">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h2>Deepseek服务供应清单</h2>
+                <h2>Deepseek使用攻略和PDF下载</h2>
                 <div class="layout-switcher">
                     <span class="layout-option active" data-columns="1">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -331,171 +351,54 @@
                 </div>
             </div>
             <div class="news-list" id="newsList">
-                <!-- 官方方案 -->
-                <a href="#" class="news-item">
+                <!-- 更新后的首篇文章 -->
+                <a href="https://www.bilibili.com/video/BV1bnNDeFELK/" class="news-item" target="_blank">
+                    <div class="news-thumbnail">
+                        <img src="cover01.jpg" alt="DeepSeek-R1 赏析封面">
+                    </div>
                     <div class="news-content">
-                        <div class="speed-label">速度：<strong class="slow">慢</strong></div>
-                        <h3>
-                            <img src="deepseek.png" style="width: auto; height: 20px; vertical-align: middle; margin-right: 4px;">
-                            DeepSeek 官方
-                        </h3>
-                        <div class="tags">
-                            <span class="tag tag-green">满血R1  ✔</span>
-                            <span class="tag tag-blue">网页版  ✔</span>
-                            <span class="tag tag-purple">API  ✔</span>
-                            <span class="tag tag-cyan">联网搜索  ✔</span>
+                        <h3>最好的致敬是学习：DeepSeek-R1 赏析</h3>
+                        <div class="news-date">
+                            <strong>hidecloud</strong> 2025/02/10
                         </div>
                         <p>
-                            优点：官方正统，能力超强，可免费使用，支持上传100M内文件、识图<br>
-                            缺点：白天易掉线，半夜稳定些
+                            hidecloud 老师与真格联合举办 DeepSeek R1 创新亮点分享会，分享涵盖 R1 与 V3 技术报告 解析、LLM 未来应用趋势，并澄清近期谣言与伪概念。
                         </p>
                     </div>
                 </a>
 
-                <!-- 秘塔 -->
-                <a href="#" class="news-item">
+                <!-- 清华大学教程 -->
+                <a href="https://pan.baidu.com/s/1Om1yyhmWCHKz-KpBTZR_xw?pwd=list" class="news-item" target="_blank">
+                    <div class="news-thumbnail">
+                        <img src="cover02.jpg" alt="清华大学教程封面">
+                    </div>
                     <div class="news-content">
-                        <div class="speed-label">速度：<strong>快</strong></div>
-                        <h3>
-                            <img src="mita.png" style="width: auto; height: 20px; vertical-align: middle; margin-right: 4px;">
-                            秘塔（Metaso）
-                        </h3>
-                        <div class="tags">
-                            <span class="tag tag-green">满血R1  ✔</span>
-                            <span class="tag tag-blue">网页版  ✔</span>
-                            <span class="tag tag-red">API  ✘</span>
-                            <span class="tag tag-cyan">联网搜索  ✔</span>
+                        <h3>DeepSeek从入门到精通【清华大学】</h3>
+                        <div class="news-date">
+                            <strong>清华大学 余梦珑博士后</strong> 2025/02/07
                         </div>
                         <p>
-                            优点：信息溯源清晰，支持DeepSeek模型<br>
-                            缺点：连续对话的效果一般
+                            网盘提取码: <strong style="color:#6236E5">list</strong><br>
+                            清华大学新闻与传播学院新媒体研究中心元宇宙文化实验室团队发布了一版 DeepSeek 详细使用手册，共 104 页，堪称国产 AI 工具 DeepSeek 的权威指南。该手册既适用于新手快速掌握基础操作，也为进阶用户提供系统性方法论，成为 DeepSeek 深度使用的标杆参考。
                         </p>
                     </div>
                 </a>
 
-                <!-- 硅基流动 -->
-                <a href="#" class="news-item">
+                <!-- 钉钉接入教程 -->
+                <a href="https://mp.weixin.qq.com/s/NjONiR67fxurSDRpr08VzA" class="news-item" target="_blank">
+                    <div class="news-thumbnail">
+                        <img src="cover03.jpg" alt="Chatbox教程封面">
+                    </div>
                     <div class="news-content">
-                        <div class="speed-label">速度：<strong class="medium">中</strong></div>
-                        <h3>
-                            <img src="siliconflow.png" style="width: auto; height: 20px; vertical-align: middle; margin-right: 4px;">
-                            硅基流动 非Pro版
-                        </h3>
-                        <div class="tags">
-                            <span class="tag tag-green">满血R1  ✔</span>
-                            <span class="tag tag-blue">网页版  ✔</span>
-                            <span class="tag tag-purple">API  ✔</span>
-                            <span class="tag tag-red">联网搜索  ✘</span>
+                        <h3>手把手教程：Chatbox + 硅基流动，快速搭建自己的 deepseek，再也不会反复连不上了</h3>
+                        <div class="news-date">
+                            <strong>启师傅</strong> 2025/02/01 
                         </div>
                         <p>
-                            硅基流动使用赠送余额只能调用非Pro版本的R1，稳定性比Pro版本低。
+                            使用 DeepSeek 过程中，因官方服务不稳定，改用 Chatbox + 硅基流动 API 自建 DeepSeek，提高使用稳定性和速度，并撰写了安装教程。
                         </p>
                     </div>
                 </a>
-
-                <!-- 硅基流动 Pro -->
-                <a href="#" class="news-item">
-                    <div class="news-content">
-                        <div class="speed-label">速度：<strong>快</strong></div>
-                        <h3>
-                            <img src="siliconflow.png" style="width: auto; height: 20px; vertical-align: middle; margin-right: 4px;">
-                            硅基流动 Pro版本
-                        </h3>
-                        <div class="tags">
-                            <span class="tag tag-green">满血R1  ✔</span>
-                            <span class="tag tag-blue">网页版  ✔</span>
-                            <span class="tag tag-purple">API  ✔</span>
-                            <span class="tag tag-red">联网搜索  ✘</span>
-                        </div>
-                        <p>
-                            优点：专线供给Pro付费API用户，速度快，稳定性高；需实名认证，和充值付费使用，Pro 版 R1 的价格：￥4/百万tokens（输入）& ￥16/百万tokens（输出）
-                        </p>
-                    </div>
-                </a>
-
-                <!-- 纳米 -->
-                <a href="#" class="news-item">
-                    <div class="news-content">
-                        <div class="speed-label">速度：<strong>快</strong></div>
-                        <h3>
-                            <img src="nami.png" style="width: auto; height: 20px; vertical-align: middle; margin-right: 4px;">
-                            纳米（Nami）
-                        </h3>
-                        <div class="tags">
-                            <span class="tag tag-green">满血R1  ✔</span>
-                            <span class="tag tag-blue">网页版  ✔</span>
-                            <span class="tag tag-red">API  ✘</span>
-                            <span class="tag tag-cyan">联网搜索  ✔</span>
-                        </div>
-                        <p>
-                            开通Deepseek满血专线，速度快，但是只能在手机App使用Deepseek模型
-                        </p>
-                    </div>
-                </a>
-
-                <!-- 阿里云百炼 -->
-                <a href="#" class="news-item">
-                    <div class="news-content">
-                        <div class="speed-label">速度：<strong>快</strong></div>
-                        <h3>
-                            <img src="alibailian.png" style="width: auto; height: 20px; vertical-align: middle; margin-right: 4px;">
-                            阿里云百炼
-                        </h3>
-                        <div class="tags">
-                            <span class="tag tag-green">满血R1  ✔</span>
-                            <span class="tag tag-red">网页版  ✘</span>
-                            <span class="tag tag-purple">API  ✔</span>
-                            <span class="tag tag-cyan">联网搜索  ✔</span>
-                        </div>
-                        <p>
-                            优点：官方赠送100万Token，有效期：百炼开通后180天内，需要API接入使用。
-                        </p>
-                    </div>
-                </a>
-
-                <!-- 扣子 Coze 平台 -->
-                <a href="#" class="news-item">
-                    <div class="news-content">
-                        <div class="speed-label">速度：<strong>快</strong></div>
-                        <h3>
-                            <img src="coze.png" style="width: auto; height: 20px; vertical-align: middle; margin-right: 4px;">
-                            扣子（Coze）平台
-                        </h3>
-                        <div class="tags">
-                            <span class="tag tag-green">满血R1  ✔</span>
-                            <span class="tag tag-blue">网页版  ✔</span>
-                            <span class="tag tag-purple">API  ✔</span>
-                            <span class="tag tag-red">联网搜索  ✘</span>
-                        </div>
-                        <p>
-                            可在 Coze 平台创建智能体，并切换为 DeepSeek-R1 模型进行交互，不支持显示模型的「思考过程」，响应可能有延迟，需要创建智能体使用（操作步骤较复杂）
-                        </p>
-                    </div>
-                </a>
-
-                <!-- 钉钉 AI 助理 -->
-                <a href="#" class="news-item">
-                    <div class="news-content">
-                        <div class="speed-label">速度：<strong>快</strong></div>
-                        <h3>
-                            <img src="dingding.png" style="width: auto; height: 20px; vertical-align: middle; margin-right: 4px;">
-                            钉钉 AI 助理
-                        </h3>
-                        <div class="tags">
-                            <span class="tag tag-green">满血R1  ✔</span>
-                            <span class="tag tag-blue">网页版  ✔</span>
-                            <span class="tag tag-red">API  ✘</span>
-                            <span class="tag tag-red">联网搜索  ✘</span>
-                        </div>
-                        <p>
-                            使用需要创建AI助手，步骤略繁琐，可以选择DeepSeek-R1→设定角色→完成部署
-                        </p>
-                    </div>
-                </a>
-
-                <!-- 其他新闻项 -->
-                <!-- 已删除日文新闻卡片 -->
-                
             </div>
         </section>
     </main>
